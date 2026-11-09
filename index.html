@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#26092b">
+  <meta name="description" content="Sir TV — تابع عالم كرة القدم والمباريات من هاتفك. تطبيق كرة قدم بجودة عالية وتجربة سلسة مع مراعاة استهلاك بيانات الإنترنت.">
+  <title>Sir TV | عالم كرة القدم بين يديك</title>
+  <link rel="icon" type="image/png" href="assets/sir-tv-icon.png">
+  <style>
+    :root{--bg:#140817;--panel:#2a1230;--panel2:#3a1740;--purple:#86108d;--purple2:#650b70;--white:#fff;--muted:#c9bfdc;--line:rgba(255,255,255,.1);--green:#65e6b2}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    .topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:23px;letter-spacing:.2px}
+    .brand img{width:46px;height:46px;border-radius:14px;background:#fff;object-fit:cover;padding:3px}
+    .nav{display:flex;align-items:center;gap:26px;color:#ded5ef;font-size:14px}
+    .nav a:hover{color:#fff}.nav-cta{padding:10px 18px;border-radius:12px;background:var(--purple);font-weight:800;color:#fff}
+    .hero{position:relative;overflow:hidden;padding:74px 0 58px;background:radial-gradient(ellipse at 78% 35%,rgba(139,92,246,.25),transparent 42%),linear-gradient(135deg,#26092b 0%,#21113e 55%,#120a23 100%)}
+    .hero:before{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.06);border-radius:50%;left:-180px;top:-210px;box-shadow:0 0 0 50px rgba(255,255,255,.018),0 0 0 100px rgba(255,255,255,.012)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:42px;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(139,92,246,.16);border:1px solid rgba(180,150,255,.25);padding:7px 13px;border-radius:99px;color:#d8c8ff;font-size:13px;font-weight:700}
+    .dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
+    h1{font-size:clamp(38px,5vw,62px);line-height:1.2;margin:20px 0 16px;font-weight:900;letter-spacing:-1.5px}
+    h1 span{color:#e3a6e8}.lead{color:var(--muted);font-size:17px;max-width:540px;margin:0 0 26px}
+    .actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+    .download{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 27px;border-radius:15px;background:linear-gradient(135deg,#a02aa8,#710b7c);box-shadow:0 12px 35px rgba(111,61,222,.34);font-size:18px;font-weight:900;transition:.2s}
+    .download:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(111,61,222,.45)}
+    .download svg{width:22px;height:22px}.small-note{color:#bfb2d5;font-size:12px;margin-top:12px}
+    .hero-art{min-height:390px;display:flex;align-items:center;justify-content:center;position:relative}
+    .art-glow{position:absolute;width:330px;height:330px;border-radius:50%;background:rgba(132,82,245,.24);filter:blur(48px)}
+    .pitch{position:relative;width:min(100%,500px);filter:drop-shadow(0 25px 28px rgba(0,0,0,.35))}
+    .trust-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:27px;color:#ddd3ef;font-size:13px}
+    .trust-row span{display:flex;align-items:center;gap:7px}.check{color:var(--green);font-weight:900}
+    .features{padding:65px 0 75px;background:#120b22}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 34px}
+    .section-head h2{font-size:32px;margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:25px 23px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border-radius:20px}
+    .ico{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:rgba(139,92,246,.18);color:#c5aaff;margin-bottom:15px}
+    .ico svg{width:25px;height:25px}.card h3{margin:0 0 7px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .download-band{padding:58px 0;background:linear-gradient(110deg,#241344,#57105f 55%,#21113b)}
+    .band-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .band-inner h2{margin:0 0 6px;font-size:29px}.band-inner p{margin:0;color:#ded2f1}
+    .band-inner .download{white-space:nowrap;background:#fff;color:#650b70;box-shadow:none}
+    footer{padding:23px 0;color:#a99cbd;font-size:12px;border-top:1px solid var(--line)}
+    .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:800px){.nav a:not(.nav-cta){display:none}.hero{padding:48px 0 38px}.hero-grid{grid-template-columns:1fr;gap:12px}.hero-art{min-height:290px;order:-1}.pitch{max-width:420px}.cards{grid-template-columns:1fr}.band-inner{align-items:flex-start;flex-direction:column}.band-inner .download{width:100%}}
+    @media(max-width:440px){.topbar{height:68px}.brand{font-size:20px}.brand img{width:40px;height:40px}h1{font-size:39px}.lead{font-size:15px}.download{width:100%;padding:15px}.trust-row{gap:12px}.hero-art{min-height:250px}}
+  </style>
+</head>
+<body>
+<header class="wrap topbar">
+  <a class="brand" href="#" aria-label="Sir TV">
+    <img src="assets/sir-tv-icon.png" alt="شعار تطبيق Sir TV">
+    <span>Sir <b style="color:#e3a6e8">TV</b></span>
+  </a>
+  <nav class="nav" aria-label="القائمة الرئيسية">
+    <a href="#features">المميزات</a>
+    <a href="#download">تحميل التطبيق</a>
+    <a class="nav-cta" href="assets/sir-tv.apk" download>حمّل الآن</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><i class="dot"></i> وجهتك لعالم كرة القدم</div>
+      <h1>كل أجواء الكرة<br><span>في مكان واحد</span></h1>
+      <p class="lead">تابع عالم كرة القدم مع Sir TV بجودة عالية وتجربة مشاهدة سلسة، مع تصميم خفيف يساعد على تقليل استهلاك بيانات الإنترنت.</p>
+      <div class="actions">
+        <a class="download" href="assets/sir-tv.apk" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v3h14v-3"/></svg>
+          تحميل Sir TV
+        </a>
+      </div>
+      <div class="small-note">ملف APK لأجهزة Android • اضغط للتحميل المباشر</div>
+      <div class="trust-row"><span><b class="check">✓</b> يعمل مع سرعات إنترنت متفاوتة</span><span><b class="check">✓</b> استهلاك أقل للإنترنت</span><span><b class="check">✓</b> واجهة سهلة</span></div>
+    </div>
+    <div class="hero-art" aria-label="رسم توضيحي لكرة القدم">
+      <div class="art-glow"></div>
+      <svg class="pitch" viewBox="0 0 560 430" role="img" aria-label="لاعبون كرتونيون في ملعب كرة قدم">
+        <defs>
+          <linearGradient id="field" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38205e"/><stop offset="1" stop-color="#17102c"/></linearGradient>
+          <linearGradient id="shirtA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#bda2ff"/><stop offset="1" stop-color="#7040d8"/></linearGradient>
+          <linearGradient id="shirtB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f6ff"/><stop offset="1" stop-color="#b8a7d6"/></linearGradient>
+          <linearGradient id="shirtC" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7d55d9"/><stop offset="1" stop-color="#3a236a"/></linearGradient>
+          <filter id="shadow"><feGaussianBlur stdDeviation="7"/></filter>
+        </defs>
+        <ellipse cx="284" cy="380" rx="220" ry="24" fill="#05020d" opacity=".55" filter="url(#shadow)"/>
+        <path d="M58 115 280 20l224 95v215l-224 75L58 330Z" fill="url(#field)" stroke="#a78bfa" stroke-opacity=".38" stroke-width="2"/>
+        <path d="M58 222h446M280 20v370M58 115l222 107 224-107M58 330l222-108 224 108" fill="none" stroke="#c8b5ff" stroke-opacity=".22" stroke-width="2"/>
+        <circle cx="280" cy="222" r="53" fill="none" stroke="#c8b5ff" stroke-opacity=".25" stroke-width="2"/>
+        <!-- fictional game-style football avatars -->
+        <g transform="translate(94 70)">
+          <ellipse cx="74" cy="281" rx="58" ry="12" fill="#080412" opacity=".45"/>
+          <path d="m47 206-17 67 28 4 29-58 16 55 28-4-8-82Z" fill="#242039"/>
+          <path d="m37 263-18 27q-3 8 7 10l43-7 5-8-20-8 10-12ZM112 262l9 27q3 9 13 5l30-18-4-8-27 6-7-20Z" fill="#e4b18e"/>
+          <path d="m42 108 63-4 26 95-27 22-65-15-15-57Z" fill="url(#shirtA)" stroke="#d7c7ff" stroke-width="2"/>
+          <path d="m44 119-28 48 17 13 28-35M105 116l33 39-12 17-32-29" fill="#d99f7d" stroke="#e8b69a" stroke-width="5" stroke-linecap="round"/>
+          <path d="M52 52q-3-28 28-31 31 2 35 32l-8 38-47 2-11-41Z" fill="#2b1b1b"/>
+          <ellipse cx="82" cy="65" rx="30" ry="36" fill="#c98764"/>
+          <path d="M52 57q5-42 43-34 22 4 23 29-15-10-28-17-16 17-38 22Z" fill="#241717"/>
+          <path d="M66 67h5m21 0h5" stroke="#2c1c1a" stroke-width="3" stroke-linecap="round"/>
+          <path d="M73 83q10 7 19-1" stroke="#7b3f38" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="m57 104 24 16 22-16" fill="none" stroke="#e8dfff" stroke-width="4"/>
+        </g>
+        <g transform="translate(222 28) scale(1.08)">
+          <ellipse cx="83" cy="326" rx="61" ry="13" fill="#080412" opacity=".45"/>
+          <path d="m49 233-21 75 28 8 34-64 14 61 29-3-8-87Z" fill="#eeeaf7"/>
+          <path d="m47 298-19 25q-4 8 8 10l41-8 3-9-22-7 9-12ZM116 300l7 29q3 8 13 4l30-19-5-8-26 7-6-20Z" fill="#9d624e"/>
+          <path d="m42 115 72-7 27 106-31 27-73-20-14-61Z" fill="url(#shirtB)" stroke="#fff" stroke-width="2"/>
+          <path d="m41 126-31 47 17 14 34-38M112 122l35 39-12 17-34-31" fill="#a56b55" stroke="#c58d70" stroke-width="5" stroke-linecap="round"/>
+          <path d="M54 55q2-37 37-38 34 2 36 40l-11 40-54-1-8-41Z" fill="#19131c"/>
+          <ellipse cx="88" cy="67" rx="31" ry="37" fill="#a96d54"/>
+          <path d="M56 54q10-40 47-31 22 5 25 32-18-10-29-21-17 18-43 20Z" fill="#15121a"/>
+          <path d="M71 69h5m22 0h5" stroke="#251b1b" stroke-width="3" stroke-linecap="round"/>
+          <path d="M78 87q10 6 19-1" stroke="#713e35" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="m62 110 26 16 23-18" fill="none" stroke="#8a6bc5" stroke-width="4"/>
+        </g>
+        <g transform="translate(383 85) scale(.82)">
+          <ellipse cx="72" cy="283" rx="57" ry="12" fill="#080412" opacity=".45"/>
+          <path d="m40 211-16 70 28 5 29-59 15 55 28-4-8-79Z" fill="#171326"/>
+          <path d="m40 269-18 26q-4 8 8 9l38-8 4-9-21-7 9-13ZM104 271l9 27q4 8 14 4l29-18-4-8-26 7-7-19Z" fill="#6f493e"/>
+          <path d="m39 111 68-4 24 99-28 24-69-18-13-59Z" fill="url(#shirtC)" stroke="#a98bfa" stroke-width="2"/>
+          <path d="m39 124-30 44 16 14 32-34M107 119l35 38-12 17-34-30" fill="#704b40" stroke="#986655" stroke-width="5" stroke-linecap="round"/>
+          <path d="M47 54q-2-35 33-39 36 1 40 41l-9 39-55 1-9-42Z" fill="#171014"/>
+          <ellipse cx="82" cy="68" rx="31" ry="37" fill="#80523f"/>
+          <path d="M51 53q8-38 45-32 22 5 27 34-18-8-29-20-18 18-43 18Z" fill="#100d13"/>
+          <path d="M66 70h5m22 0h5" stroke="#201516" stroke-width="3" stroke-linecap="round"/>
+          <path d="M72 87q11 6 20-2" stroke="#56332f" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="m57 108 25 16 24-18" fill="none" stroke="#e3a6e8" stroke-width="4"/>
+        </g>
+        <g transform="translate(268 333) rotate(-12)">
+          <circle r="22" fill="#f7f4ff" stroke="#bca9e8" stroke-width="2"/>
+          <path d="m-7-10 11-4 8 9-5 12-13 2-7-10ZM11-13l7 4M-20-1l6-1M-4 20l-1-8" fill="#272039" stroke="#272039" stroke-width="3" stroke-linejoin="round"/>
+        </g>
+        <g fill="#c5aaff" opacity=".75"><circle cx="58" cy="60" r="3"/><circle cx="489" cy="58" r="4"/><circle cx="477" cy="356" r="3"/><path d="M470 125h18m-9-9v18" stroke="#c5aaff" stroke-width="2"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>كرة القدم أقرب إليك</h2>
+      <p>كل ما تحتاجه لتجربة مشاهدة بسيطة، بتصميم واضح وسهل الاستخدام.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></div><h3>تطبيق خفيف</h3><p>مصمم ليكون بسيطاً وسلساً على الهاتف دون تعقيد.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9a14 14 0 0 1 18 0M6 12a9 9 0 0 1 12 0m-9 3a4 4 0 0 1 6 0"/><path d="M12 19h.01"/></svg></div><h3>يعمل مع سرعات إنترنت متفاوتة</h3><p>مصمم ليمنحك تجربة مشاهدة سلسة حتى مع اتصال متوسط، مع مراعاة استهلاك البيانات.</p></article>
+      <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/><path d="M4 12h16"/></svg></div><h3>استهلاك أقل للإنترنت</h3><p>يساعد على تقليل استهلاك باقة الإنترنت أثناء الاستخدام.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="download-band" id="download">
+  <div class="wrap band-inner">
+    <div><h2>جاهز لتجربة Sir TV؟</h2><p>حمّل التطبيق على هاتف Android وابدأ الآن.</p></div>
+    <a class="download" href="assets/sir-tv.apk" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v3h14v-3"/></svg>
+      تحميل التطبيق APK
+    </a>
+  </div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Sir TV. جميع الحقوق محفوظة.</span><span>مصمم لعشاق كرة القدم ⚽</span></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
